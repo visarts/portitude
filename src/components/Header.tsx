@@ -1,28 +1,30 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Typography } from './_common'
 
 const StyledHeader = styled.header`
-    background: #333;
-    color: white;
-    display: flex;
-    width: 100%;
-    border-bottom: 12px solid #aa5588;
+  display: flex;
+  width: 100%;
+  border-bottom-right-radius: 100px;
+  ${({ theme }) => css`
+    border-bottom: 12px solid ${theme.highlight};
+    background: ${theme.deeper};
+  `}
 `
 
-const StyledHeaderTitle = styled.h1`
-    margin: 0;
-    padding: 20px;
-    font-weight: 500;
+const StyledHeaderTitle = styled(Typography)`
+  margin: 0;
+  padding: 20px 50px;
 `
 
 interface HeaderProps {
-    title: string
+  title: string
 }
 
 function Header ({ title = 'Portitude' }: HeaderProps) {
-    return (
-        <StyledHeader><StyledHeaderTitle>{title}</StyledHeaderTitle></StyledHeader>
-    )
+  return (
+    <StyledHeader><StyledHeaderTitle variant="h1">{title}</StyledHeaderTitle></StyledHeader>
+  )
 }
 
 export default Header

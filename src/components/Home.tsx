@@ -14,14 +14,20 @@ const StyledHomeNavItem = styled.div<homeNavItemProps>`
   flex-grow: 1;
   padding: 30px 20px;
   border-top-right-radius: 50px;
+  cursor: pointer;
+  transition: .2s all;
   &:first-child {
     margin-right: 20px;
   }
   ${({ themeVariant, theme }) => css`
     background: ${theme.higher};
     border: 1px solid ${theme.highlight};
-    border-bottom: 10px solid ${themeVariant === 'arts' ? theme.arts.highlight : theme.lit.highlight};
+    border-bottom: 10px solid ${theme[themeVariant].main};
     box-shadow: ${theme.boxShadows.medium};
+    &:hover {
+      background: ${theme.highlight};
+      border-bottom-color: ${theme[themeVariant].highlight};
+    }
   `}
 `
 interface HomeProps {

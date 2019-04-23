@@ -10,10 +10,12 @@ export const theme = {
     medium: '2px 2px 15px rgba(0, 0, 0, .55)',
   },
   arts: {
-    highlight: '#452d6a',
+    main: '#452d6a',
+    highlight: '#6a3fac',
   },
   lit: {
-    highlight: '#174956',
+    main: '#174956',
+    highlight: '#348094',
   }
 }
 
@@ -29,10 +31,10 @@ export const lightTheme = {
     medium: '2px 2px 15px rgba(0, 0, 0, .25)',
   },
   arts: {
-    highlight: '#6a3fac',
+    main: '#6a3fac',
   },
   lit: {
-    highlight: '#348094',
+    main: '#348094',
   }
 }
 

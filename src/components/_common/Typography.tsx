@@ -2,7 +2,8 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 const typographyHeaderBase = css`
-  font-weight: 500;
+  font-weight: 400;
+  font-family: 'Rock Salt', sans-serif;
   margin-top: 0rem;
 `
 

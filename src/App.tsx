@@ -1,7 +1,14 @@
 import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+
 import Header from './components/Header'
 import Home from './components/Home'
+
+import Arts from './components/Arts'
+import Literature from './components/Literature'
+
 import StyledGlobal from './styles/main'
 import { theme, lightTheme } from './styles/theme'
 
@@ -16,13 +23,15 @@ function App() {
   }
   return (
     <ThemeProvider theme={isDarkTheme ? theme : lightTheme}>
-      <div className="App">
+      <Router>
         <StyledGlobal />
         <Header title="Portitude" />
         <StyledAppContainer>
-          <Home toggleTheme={toggleTheme} />
+          <Route exact path="/" render={() => <Home toggleTheme={toggleTheme} />} />
+          <Route exact path="/arts" render={() => <Arts />} />
+          <Route exact path="/literature" render={() => <Literature />} />
         </StyledAppContainer>
-      </div>
+      </Router>
     </ThemeProvider>
   )
 }

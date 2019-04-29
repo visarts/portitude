@@ -32,9 +32,11 @@ export const lightTheme = {
   },
   arts: {
     main: '#6a3fac',
+    highlight: '#8c66ce',
   },
   lit: {
     main: '#348094',
+    highlight: '#56a2b6',
   }
 }
 

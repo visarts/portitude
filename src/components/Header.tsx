@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import { Typography } from './_common'
 
@@ -12,6 +13,11 @@ const StyledHeader = styled.header`
   `}
 `
 
+const StyledHeaderTitleLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+`
+
 const StyledHeaderTitle = styled(Typography)`
   margin: 0;
   padding: 20px 50px;
@@ -23,7 +29,11 @@ interface HeaderProps {
 
 function Header ({ title = 'Portitude' }: HeaderProps) {
   return (
-    <StyledHeader><StyledHeaderTitle variant="h1">{title}</StyledHeaderTitle></StyledHeader>
+    <StyledHeader>
+      <StyledHeaderTitle variant="h1">
+        <StyledHeaderTitleLink to="/">{title}</StyledHeaderTitleLink>
+      </StyledHeaderTitle>
+    </StyledHeader>
   )
 }
 
